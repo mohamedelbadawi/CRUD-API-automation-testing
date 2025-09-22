@@ -1,7 +1,7 @@
 import { test, expect } from "@playwright/test";
 import { UserAPI } from "../api/userAPI";
 import z from "zod";
-import { creationSchema, userSchema } from "../Schemas/UserSchema";
+import { creationSchema, userSchema } from "../schemas/UserSchema";
 
 test.describe("Users API test", () => {
     test("check get users success response and user object structure", async ({ request }) => {
