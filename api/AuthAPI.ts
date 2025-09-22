@@ -5,9 +5,7 @@ export class AuthAPI {
     async login(email: string, password: string) {
         return this.request.post(BASE_RESOURCE, {
             data: { email: email, password: password },
-            headers: {
-                "x-api-key": "reqres-free-v1"
-            }
+           
         });
     }
 

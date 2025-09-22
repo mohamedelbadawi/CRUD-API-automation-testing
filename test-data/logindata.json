@@ -1,0 +1,14 @@
+[
+    {
+        "email": "eve.holt@reqres.in",
+        "password": "pistol",
+        "expectedStatus": 200,
+        "shouldHaveToken": true
+    },
+    {
+        "email": "sydney@fife",
+        "password": "",
+        "expectedStatus": 400,
+        "shouldHaveToken": false
+    }
+]

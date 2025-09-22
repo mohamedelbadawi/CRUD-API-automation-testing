@@ -1,0 +1,33 @@
+name: Playwright Tests
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3   # updated
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3  # updated
+        with:
+          node-version: '18'         # Node 16 is EOL, use 18 (LTS)
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps
+
+      - name: Run API tests
+        run: npx playwright test
+
+      - name: Upload Playwright test results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+            name: playwright-report
+            path: playwright-report
+
